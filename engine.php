@@ -24,7 +24,7 @@ function process_command()
     if ($command == "add") {
         $link_id = prepare_query("INSERT INTO links (link, title_id) VALUES ('$parameter1', '$parameter2')");
         error_log($link_id);
-        
+
         $query = prepare_query("INSERT INTO station_elements (station_id, link_id, type, icon_id) VALUES ($station_id, $link_id, 'link', false)");
         return $query;
     }
